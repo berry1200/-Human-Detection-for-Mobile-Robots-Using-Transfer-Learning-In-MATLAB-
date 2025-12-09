@@ -34,3 +34,38 @@ The final model reaches **94.17% accuracy** on the test set.
 └─ Dataset/
    ├─ human/                       # Put your human images here
    └─ nonhuman/                    # Put your non-human images here
+
+** 3. Quick Start (Use Pretrained Model) **
+
+If you only want to test the system, you do not need to retrain.
+
+Step 1 – Open MATLAB in this folder
+
+In MATLAB, set the current folder to the project root.
+
+Step 2 – Put a test image
+
+Add an image file in the project folder, for example:
+
+test_image.jpg
+
+It can be any JPG image that either contains a person or not.
+
+Step 3 – Run the demo script
+
+In the MATLAB Command Window:
+
+** demo_image_file **
+
+
+The script will:
+
+Load humanTransferNet_aug.mat
+
+Read test_image.jpg
+
+Resize it to the correct input size
+
+Classify it as human or nonhuman
+
+Show the image with the prediction and confidence score in the title
