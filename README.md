@@ -35,6 +35,10 @@ The final model reaches **94.17% accuracy** on the test set.
    ├─ human/                       # Put your human images here
    └─ nonhuman/                    # Put your non-human images here
 
+https://drive.google.com/file/d/1eM6iUeSCc9ax_TdZWzIWGV8puRMVdyz1/view?usp=sharing
+Note: The trained model (humanTransferNet_aug.mat) is large (~80 MB).
+If it cannot be downloaded  from GitHub, use the Google Drive link.
+
 _3. Quick Start (Recommended) — Use the Pretrained Model_
 
 If you want to test the system immediately, you only need:
