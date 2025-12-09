@@ -35,11 +35,11 @@ The final model reaches **94.17% accuracy** on the test set.
    ├─ human/                       # Put your human images here
    └─ nonhuman/                    # Put your non-human images here
 
-https://drive.google.com/file/d/1eM6iUeSCc9ax_TdZWzIWGV8puRMVdyz1/view?usp=sharing
-Note: The trained model (humanTransferNet_aug.mat) is large (~80 MB).
-If it cannot be downloaded  from GitHub, use the Google Drive link.
+##https://drive.google.com/file/d/1eM6iUeSCc9ax_TdZWzIWGV8puRMVdyz1/view?usp=sharing
+##Note: The trained model (humanTransferNet_aug.mat) is large (~80 MB).
+##If it cannot be downloaded  from GitHub, use the Google Drive link.
 
-_3. Quick Start (Recommended) — Use the Pretrained Model_
+#_3. Quick Start (Recommended) — Use the Pretrained Model_
 
 If you want to test the system immediately, you only need:
 
@@ -82,7 +82,7 @@ Display the image with prediction and confidence score
 
 This demo works 100% reliably and is recommended for beginners.
 
-_4. Full Training Workflow (Optional)_
+#4. Full Training Workflow (Optional)
 
 If you want to train the model from scratch, follow all steps below.
 
@@ -169,3 +169,6 @@ You can also visualize random predictions using:
 
 show_random_predictions
 
+
+
+#Google drive link for entire code if github is not working:   **https://drive.google.com/drive/folders/14RfRH9-jKCEfSbth5O1ivdapDADY2AN6?usp=sharing**
