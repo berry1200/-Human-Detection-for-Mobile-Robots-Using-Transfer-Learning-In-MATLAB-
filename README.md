@@ -35,37 +35,133 @@ The final model reaches **94.17% accuracy** on the test set.
    ├─ human/                       # Put your human images here
    └─ nonhuman/                    # Put your non-human images here
 
-** 3. Quick Start (Use Pretrained Model) **
+_3. Quick Start (Recommended) — Use the Pretrained Model_
 
-If you only want to test the system, you do not need to retrain.
+If you want to test the system immediately, you only need:
 
-Step 1 – Open MATLAB in this folder
+humanTransferNet_aug.mat
 
-In MATLAB, set the current folder to the project root.
+demo_image_file.m
 
-Step 2 – Put a test image
+Step 1 — Open MATLAB in this project folder
 
-Add an image file in the project folder, for example:
+Set the current MATLAB directory to the GitHub project location.
+
+Step 2 — Add a test image
+
+Place an image such as:
 
 test_image.jpg
 
-It can be any JPG image that either contains a person or not.
 
-Step 3 – Run the demo script
+in the project folder.
+This image may contain a human or a nonhuman scene.
+
+Step 3 — Run the demo
 
 In the MATLAB Command Window:
 
-** demo_image_file **
+demo_image_file
 
 
 The script will:
 
-Load humanTransferNet_aug.mat
+Load the trained model (humanTransferNet_aug.mat)
 
 Read test_image.jpg
 
-Resize it to the correct input size
+Resize it to the required CNN input size
 
 Classify it as human or nonhuman
 
-Show the image with the prediction and confidence score in the title
+Display the image with prediction and confidence score
+
+This demo works 100% reliably and is recommended for beginners.
+
+_4. Full Training Workflow (Optional)_
+
+If you want to train the model from scratch, follow all steps below.
+
+Step 1 — Prepare the Dataset
+
+Create the following folder structure:
+
+Dataset/
+   human/
+      (your images containing humans)
+   nonhuman/
+      (your images without humans)
+
+
+Use at least 50–100 images per class for good results.
+
+Step 2 — (Optional) Generate Low-Light & Augmented Images
+
+To improve robustness in dark and complex environments:
+
+create_brightness_aug
+
+
+This generates:
+
+Dataset_aug/
+
+
+containing extra rotated, scaled, and low-light images.
+
+Step 3 — Prepare Datastores
+
+Run:
+
+prepare_data_aug
+
+
+This creates:
+
+datastores_aug.mat
+
+
+containing training and testing sets ready for MATLAB’s CNN functions.
+
+Step 4 — Train the Transfer-Learning Model
+
+Train the CNN using:
+
+train_transfer_aug
+
+
+This script:
+
+Loads a pretrained CNN (ResNet-18 / AlexNet)
+
+Replaces the final layers for binary classification
+
+Trains the model using your dataset
+
+Saves the result as:
+
+humanTransferNet_aug.mat
+
+Step 5 — Evaluate the Model
+
+Run:
+
+step12_evaluate_full
+
+
+This generates:
+
+Accuracy (%)
+
+Precision, Recall, F1-score
+
+Confusion Matrix
+
+ROC Curve (if supported)
+
+Runtime speed (ms/frame + FPS)
+
+You can also visualize random predictions using:
+
+show_random_predictions
+
